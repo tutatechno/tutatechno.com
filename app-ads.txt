@@ -1,6 +1,1 @@
-
-# app-ads.txt for tutatechno.com
-# Replace PUB_ID_HERE with your AdMob publisher ID (AdMob > Settings > Publisher ID),
-# then delete this comment block. The ID looks like pub-1234567890123456.
-
-google.com, PUB_ID_HERE, DIRECT, f08c47fec0942fa0
+google.com, pub-5776150442162674, DIRECT, f08c47fec0942fa0
