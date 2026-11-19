@@ -13,7 +13,7 @@
 <body>
 <div class="wrap">
 <header class="masthead doc">
-  <p class="eyebrow"><a href="/">Tutatechno</a> · Privacy Policy · 25 August 2026</p>
+  <p class="eyebrow"><a href="/">Tutatechno</a> · Privacy Policy · 19 November 2026</p>
   <h1>TellWay — Privacy Policy</h1>
 </header>
 <main class="doc-body">
@@ -28,7 +28,7 @@ request to any user or supervisory authority entitled to them.</p>
 
 <h2>Location</h2>
 <p>The app uses your precise location to identify places near you. Your coordinates are sent to the
-search APIs of open databases &mdash; Wikipedia, Wikivoyage, Wikidata and OpenStreetMap &mdash; which
+search APIs of open databases — Wikipedia, Wikivoyage, Wikidata and OpenStreetMap — which
 return what is nearby. The coordinates are not retained after the response arrives, on the device or
 elsewhere; no route log or location history is created.</p>
 <p>Precise location is required because the app runs continuously while you travel: it refreshes your
@@ -40,27 +40,77 @@ during a journey you started and stops when you pause it or remove the app from 
 not request background location permission.</p>
 <p>If you start navigation, the coordinates of the destination are passed to the map application on your
 device. Your own position is not.</p>
+<p><strong>Your GPS coordinates are never passed to the advertising SDK.</strong> See
+<a href="#advertising">Advertising</a> below for what the advertising SDK does process.</p>
 
 <h2>What the app stores on your device</h2>
 <ul>
-  <li><strong>Settings</strong> &mdash; language, voice, persona, speech rate, topics, audience, appearance, search radius, story length.</li>
-  <li><strong>Saved places</strong> &mdash; the name and coordinates of places you starred. These are the coordinates of places, not of you.</li>
+  <li><strong>Settings</strong> — language, voice, persona, speech rate, topics, audience, appearance, search radius, story length.</li>
+  <li><strong>Saved places</strong> — the name and coordinates of places you starred. These are the coordinates of places, not of you.</li>
   <li><strong>Optional API keys</strong> you supply for the optional data sources.</li>
+  <li><strong>Your advertising-consent choice</strong>, stored by the Google User Messaging Platform so that you are not asked again on every launch.</li>
 </ul>
-<p>Not stored: your location, movement history, route, device identifier, advertising identifier, name
-or account data. <em>Settings &rarr; Reset everything</em> removes all of it, as does uninstalling.</p>
+<p>The app itself does not store your location, movement history, route, name or account data.
+<em>Settings → Reset everything</em> removes everything the app has stored, as does uninstalling.
+The advertising SDK keeps its own data, described below; the way to withdraw consent is
+<em>Settings → Ad privacy settings</em> inside the app.</p>
+
+<h2 id="advertising">Advertising</h2>
+<p>TellWay is free and is funded by advertising. Ads are supplied by <strong>Google AdMob</strong>
+(Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland), which acts as an independent
+controller for the data it processes for advertising. Google's own privacy policy applies to that
+processing: <a href="https://policies.google.com/technologies/partner-sites">How Google uses information
+from sites or apps that use our services</a>.</p>
+
+<h3>What the advertising SDK processes</h3>
+<p>To request and display an ad, the Google Mobile Ads SDK may collect and transmit:</p>
+<ul>
+  <li>your device's <strong>advertising identifier</strong> (Android Advertising ID, or a non-resettable app
+      identifier where that is unavailable);</li>
+  <li>your <strong>IP address</strong>, from which an approximate, city-level location is derived;</li>
+  <li><strong>device and app information</strong> — model, operating-system version, language, screen size,
+      the app's identifier and version;</li>
+  <li><strong>your interaction with the ads</strong> — whether an ad was shown, viewed or tapped.</li>
+</ul>
+<p>This happens regardless of your consent choice, because without it no ad can be delivered at all.
+What your choice decides is whether that data may also be used to build an interest profile and to
+personalise the ads you see.</p>
+
+<h3>Consent</h3>
+<p>If you are in the European Economic Area, the United Kingdom or Switzerland, the app shows a consent
+dialog from Google's <strong>User Messaging Platform (UMP)</strong> before the first ad is requested. It
+lists Google and its advertising partners and asks for your choice.</p>
+<ul>
+  <li><strong>If you consent</strong>, the advertising identifier and the data above may be used by Google
+      and the partners you accepted to personalise ads and measure them, and the approximate location
+      derived from your IP address may be used for advertising purposes. The legal basis is your consent
+      (GDPR Art. 6(1)(a)).</li>
+  <li><strong>If you refuse</strong>, you still see ads, but they are not personalised. Non-personalised ads
+      still use the IP address and basic device information for serving, frequency capping, aggregated
+      reporting and fraud prevention.</li>
+</ul>
+<p>You can change or withdraw your choice at any time, without giving a reason, in
+<em>Settings → Ad privacy settings</em> inside the app, which reopens the same dialog. Withdrawing
+consent does not affect processing that already took place. You can also reset or delete the advertising
+identifier itself in Android's <em>Settings → Privacy → Ads</em>.</p>
 
 <h2>Third parties</h2>
-<p>The app queries the following public services. Each has its own privacy policy, and as with any
-internet request your IP address reaches them along with the request. All requests use HTTPS, and no
-device identifier, advertising ID, cookie or unique user identifier is sent.</p>
+<p>The app queries the following services. Each has its own privacy policy, and as with any internet
+request your IP address reaches them along with the request. All requests use HTTPS.</p>
+<p>Requests to the open-data services below carry <strong>no</strong> advertising identifier, cookie or unique
+user identifier. The advertising service is the exception, and is described above.</p>
 <table>
-  <tr><th>Service</th><th>What is sent</th><th>When</th></tr>
+  <tbody><tr><th>Service</th><th>What is sent</th><th>When</th></tr>
   <tr><td>Wikimedia Foundation (Wikipedia, Wikivoyage, Wikidata)</td><td>Coordinates, search terms, language</td><td>Always</td></tr>
   <tr><td>OpenStreetMap and Overpass API operators</td><td>Coordinates, radius, map tile coordinates</td><td>Always</td></tr>
+  <tr><td>Google (Maps SDK for Android)</td><td>Map tile and camera coordinates, device and app information</td><td>When the map is shown</td></tr>
+  <tr><td>Google AdMob (Google Ireland Limited)</td><td>Advertising identifier, IP address, device and app information, ad interactions — see <a href="#advertising">Advertising</a></td><td>Always, subject to your consent choice</td></tr>
+  <tr><td>GitHub, Inc. (offline country packs)</td><td>A request for the pack list and for the pack file you choose — no coordinates or identifiers</td><td>Only when you open the offline packs list or download a pack</td></tr>
   <tr><td>Europeana, GeoNames, OpenTripMap</td><td>Coordinates, radius</td><td>Only if enabled by you</td></tr>
   <tr><td>Your device's map application</td><td>The destination's coordinates</td><td>Only if you start navigation</td></tr>
-</table>
+</tbody></table>
+<p>Google may transfer data outside the European Economic Area. Such transfers rely on the European
+Commission's standard contractual clauses and, for the United States, the EU–US Data Privacy Framework.</p>
 
 <h2>Speech</h2>
 <p>Stories are spoken by your device's own text-to-speech engine. If your system is set to a network
@@ -72,16 +122,19 @@ setting rather than an app setting, and it can be changed in Android system sett
 Wikidata under CC0, OpenStreetMap under ODbL.</p>
 <h2>Your rights</h2>
 <p>Under the GDPR you have rights of access, rectification, erasure, restriction, portability and
-objection over personal data a controller holds about you. Everything the app stores is held on your
+objection over personal data a controller holds about you. Everything this app itself stores is held on your
 device and under your direct control; you can delete it inside the app, through Android's
-<em>Settings &rarr; Apps &rarr; Storage &rarr; Clear storage</em>, or by uninstalling.</p>
+<em>Settings → Apps → Storage → Clear storage</em>, or by uninstalling. For the data Google processes for
+advertising, exercise your rights with Google through
+<a href="https://policies.google.com/privacy">its privacy policy</a>; in the app, withdrawing consent in
+<em>Settings → Ad privacy settings</em> stops personalised advertising.</p>
 <p>If you contact us by e-mail, we process your e-mail address and the content of your message in order
 to answer you, on the basis of legitimate interest (GDPR Art. 6(1)(f)), and retain it for at most
 12 months after replying.</p>
 <p>You may lodge a complaint with your national supervisory authority. In Hungary this is the National
 Authority for Data Protection and Freedom of Information (NAIH, 1055 Budapest, Falk Miksa utca 9-11.).</p>
 
-<h2>Children</h2>
+<h2 id="children">Children</h2>
 <p>The app is intended for a general audience and is not directed at children under 13.</p>
 
 <h2>Changes</h2>
@@ -89,10 +142,10 @@ Authority for Data Protection and Freedom of Information (NAIH, 1055 Budapest, F
 affects data handling, this page is updated and material changes are noted in the app's release notes.</p>
 
 <h2>Contact</h2>
-<p><a href="mailto:tutatechno@gmail.com">tutatechno@gmail.com</a> &middot; <a href="/legal.html">Copyright &amp; IP</a></p>
+<p><a href="mailto:tutatechno@gmail.com">tutatechno@gmail.com</a> · <a href="/legal.html">Copyright &amp; IP</a></p>
 </main>
 <footer>
-  <span>&copy; 2026 Tutatechno. All rights reserved.</span>
+  <span>© 2026 Tutatechno. All rights reserved.</span>
   <span><a href="/legal.html">Legal &amp; IP</a></span>
 </footer>
 </div>
